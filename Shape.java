@@ -11,7 +11,6 @@ public abstract class Shape implements Movable {
 	protected double perimeter;
 
 	public void calculatePoints() {
-
 	}
 
 	public double calculateArea() {
@@ -23,7 +22,6 @@ public abstract class Shape implements Movable {
 	}
 
 	public String toString() {
-
 		return "";
 	}
 
