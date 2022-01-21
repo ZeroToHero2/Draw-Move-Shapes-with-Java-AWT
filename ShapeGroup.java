@@ -24,10 +24,7 @@ public class ShapeGroup {
 	}
 
 	public void moveGroup(int newx, int newy) {
-		// int distancex = (int) leftTop.getX()-newx;
-		// int distancey = newy - (int) leftTop.getY();
-		// leftTop.setLocation(newx, newy);
-
+		
 		for (int a = 0; a < shapes.size(); a++) {
 			int distancex = (int) leftTop.getX() - (int) shapes.get(a).leftTop.getX();
 			int distancey = (int) shapes.get(a).leftTop.getY() - (int) leftTop.getY();// (int) leftTop.getY() - (int)
