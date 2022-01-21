@@ -12,7 +12,6 @@ public class ShapeGroup {
 	}
 
 	public void addShape(Shape newShape) {
-
 		shapes.add(newShape);
 		findLeftTop();
 	}
@@ -32,8 +31,6 @@ public class ShapeGroup {
 		for (int a = 0; a < shapes.size(); a++) {
 			int distancex = (int) leftTop.getX() - (int) shapes.get(a).leftTop.getX();
 			int distancey = (int) shapes.get(a).leftTop.getY() - (int) leftTop.getY();// (int) leftTop.getY() - (int)
-																						// shapes.get(a).leftTop.getY();
-
 			shapes.get(a).move(newx + distancex, newy + distancey);
 
 		}
@@ -42,9 +39,8 @@ public class ShapeGroup {
 	}
 
 	public Shape getShape(int index) {
-
+		
 		Shape returned = shapes.get(index);
-
 		return returned;
 	}
 
@@ -53,11 +49,9 @@ public class ShapeGroup {
 		for (int a = 1; a < shapes.size(); a++) {
 			if (shapes.get(a).leftTop.getX() < acceptedp.getX()) {
 				acceptedp.x = (int) shapes.get(a).leftTop.getX();
-
 			}
 			if (shapes.get(a).leftTop.getY() < acceptedp.getY()) {
 				acceptedp.y = (int) shapes.get(a).leftTop.getY();
-
 			}
 
 		}
@@ -71,9 +65,6 @@ public class ShapeGroup {
 
 	public void switchGroup(ShapeGroup newgroup) {
 		ArrayList<Shape> shapeArray = new ArrayList<Shape>();
-		// shapeArray = (ArrayList<Shape>) this.shapes.clone();
-		// this.shapes = (ArrayList<Shape>) newgroup.shapes.clone();
-		// newgroup.shapes = (ArrayList<Shape>) shapeArray.clone();
 		for (int a = 0; a < this.shapes.size(); a++) {
 			shapeArray.add(this.shapes.get(a));
 		}
@@ -83,9 +74,6 @@ public class ShapeGroup {
 		for (int a = 0; a < shapeArray.size(); a++) {
 			newgroup.shapes.add(shapeArray.get(a));
 		}
-		// Collections.copy(shapeArray, this.shapes);
-		// Collections.copy(this.shapes, newgroup.shapes);B
-		// Collections.copy(newgroup.shapes, shapeArray);
 		findLeftTop();
 		newgroup.findLeftTop();
 
@@ -94,7 +82,6 @@ public class ShapeGroup {
 	public void mergeGroup(ShapeGroup shapegroup1) {
 		this.shapes.addAll(shapegroup1.shapes);
 		findLeftTop();
-
 	}
 
 	public String toString() {
