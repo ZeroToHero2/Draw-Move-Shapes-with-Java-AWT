@@ -10,18 +10,15 @@ public class Circle extends Shape {
 		this.radius = radius;
 		leftTop = new Point(x, y);
 		calculatePoints();
-
 		isCircular = true;
 	}
 
 	public double calculateArea() {
 		return Math.PI * Math.pow(radius, 2);
-
 	}
 
 	public double calculatePerimeter() {
 		return 2 * Math.PI * radius;
-
 	}
 
 	public void calculatePoints() {
@@ -35,9 +32,7 @@ public class Circle extends Shape {
 
 	public void move(int newx, int newy) {
 		leftTop.setLocation(newx, newy);
-
 		calculatePoints();
-
 	}
 
 	public String toString() {
