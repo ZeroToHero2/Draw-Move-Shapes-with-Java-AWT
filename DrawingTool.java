@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class DrawingTool extends JPanel {
+	
 	private static final long serialVersionUID = 1L;
 	public ArrayList<Shape> items = new ArrayList<Shape>();
-
 	private Color lineColor = Color.BLACK;
 	private Color fillColor = Color.WHITE;
-
+	
 	public DrawingTool(ArrayList<Shape> allShapes) {
 		// set frame's title
 		super();
@@ -22,13 +22,12 @@ public class DrawingTool extends JPanel {
 		board.setVisible(true);
 		board.add(this);
 		this.items = allShapes;
-
 		this.setSize(400, 400);
 
 		// make this frame visible
 		this.setVisible(true);
 	}
-
+	
 	public void paint(Graphics g) {
 		g.setColor(fillColor);
 		g.fillRect(0, 0, 400, 400);
@@ -52,7 +51,7 @@ public class DrawingTool extends JPanel {
 				}
 				g.drawLine(currentPoint.x, currentPoint.y, startPoint.x, startPoint.y);
 			} else {
-
+				
 				g.drawOval(obj.points.get(0).x, obj.points.get(0).y, (obj.points.get(1).x - obj.points.get(0).x),
 						(obj.points.get(1).x - obj.points.get(0).x));
 			}
